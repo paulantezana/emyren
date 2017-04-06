@@ -1,0 +1,39 @@
+/* Exagono */
+@mixin exagono($size,$color){
+    @if $color == 'blue'{
+        background: url('/assets/img/core/exagono-blue.svg') no-repeat center center;
+    } @else if($color == 'gray'){
+        background: url('/assets/img/core/exagono-gray.svg') no-repeat center center;
+    } @else {
+        background: url('/assets/img/core/exagono.svg') no-repeat center center;
+    }
+    width: $size;
+    height: $size + $size/5;
+    position: relative;
+    z-index: 20;
+    @media print {
+        display: none;
+    }
+}
+@mixin btn(){
+    display: inline-block;
+    background: $white_darck;
+    line-height: 2.7em;
+    border-radius: 1.85em;
+    padding: 0 1rem;
+    border: 1px solid darken($white_darck,5);
+    margin: 0.7rem;
+    &:hover,
+    &:active{
+        text-decoration: none;
+        background: $color-2;
+        border: 1px solid darken($color-2,5);
+        color: $white;
+    }
+    &:active{
+        transform: scale(0.97);
+    }
+    @media print {
+        display: none;
+    }
+}

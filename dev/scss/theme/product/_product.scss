@@ -1,0 +1,54 @@
+.customArticles{
+    background: $color-1;
+    &__header{
+        @include edContainer;
+    }
+}
+.product{
+    padding: 2rem 0 ;
+    &:nth-child(even){
+        background: url('/img/core/grid_darck.png') no-repeat bottom center / 100% 80%,
+                    linear-gradient(darken($white_darck,5),lighten($white_darck,5));
+    }
+    &:nth-child(odd){
+        background: url('/img/core/grid_light.png') no-repeat bottom center / 100% 80%,
+                    linear-gradient($color-2,lighten($color-2,10));
+        color: $white_darck;
+        .product__content{
+            flex-direction: row-reverse;
+        }
+        .product__callToAction{a{margin-left: auto;margin-right: 5rem}}
+    }
+    &__content{
+        @include edContainer;
+        align-items: flex-start;
+    }
+    &__item{
+        &:nth-child(2){@include edItem(100,50,60);}
+        &:nth-child(3){@include edItem(100,50,40);}
+    }
+    &__callToAction{
+        width: 100%;
+        display: flex;
+        a{
+            background: darken($color-4,5);
+            color: $white_darck;
+            border: 1px solid darken($color-4,10);
+            &:hover,
+            &:active{
+                background: $color-4;
+                border: 1px solid darken($color-4,5);
+            }
+            margin: 1rem auto 3rem 5rem;
+        }
+    }
+    &__item{
+        /* ------------- Style Decoration ---------------- */
+        h2{
+            margin: 0;
+            text-transform: uppercase;
+            font-size: 1.8rem;
+            line-height: 1em;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.footer{
+    margin-top: auto;
+}
+.contendFluit{
+    max-width: $max-width;
+    margin: 0 auto;
+}

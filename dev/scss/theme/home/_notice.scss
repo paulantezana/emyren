@@ -1,0 +1,53 @@
+.notice{
+    /* ----------------- Style Layaut -------------------- */
+    &__container{
+        @include edContainer;
+        @include grid('.notice',(1, 2, 3),2rem);
+        margin: 0 auto;
+        &__title{
+            width: 100%;
+            text-align: center;
+            span{
+                &:nth-child(1){color: $color-2; border-bottom: 3px solid $color-2;}
+                &:nth-child(2){color: $color-1; border-bottom: 3px solid $color-1;}
+                &:nth-child(3){color: $color-3; border-bottom: 3px solid $color-3;}
+            }
+        }
+    }
+    /* ---------------- End Style Layaut ----------------- */
+    /*Style notice*/
+    padding: 1rem;
+    border: 1px solid $color-2;
+    border-radius: 1rem;
+    &__title{
+        text-align: center;
+        color: $color-1;
+        line-height: 2rem;
+        font-size: 1.9rem;
+        span{
+            color: $color-2;
+            display: block;
+        }
+        margin-bottom: 0;
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        P{
+            text-align: center;
+            margin-top: 0.2rem;
+        }
+        a{
+            text-align: center;
+            background: $color-1;
+            display: inline-block;
+            color: $white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin: 1.5rem;
+            text-transform: uppercase;
+            text-decoration: none
+        }
+    }
+}

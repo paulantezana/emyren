@@ -1,0 +1,42 @@
+.header{
+	/* ----------------- Layaut ---------------- */
+	&__item{
+		@include from(l){
+			display: flex;
+			max-width: $max-width;
+			margin: auto;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+	// border-bottom: 1px solid rgba($color-1,.1);
+	/* --------- Estyle zone Contact ----------- */
+	&__item{
+		&:first-child{
+			background: $color-1;
+		}
+	}
+	&__contact{
+		display: flex;
+		width: 100%;
+		justify-content: flex-end;
+		a,span{
+			color: $white_darck;
+			line-height: 2.2rem;
+		}
+		.email{
+			@include to(m){
+				display: none;
+			}
+		}
+	}
+	/* ----------- Estyles Logo ------------- */
+	object{display: block;}
+	&__logo{
+		width: 25rem;
+		max-width: 100%;
+		@include to(l){
+			margin: auto;
+		}
+	}
+}

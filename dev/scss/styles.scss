@@ -1,0 +1,30 @@
+/*//== Import Core and Config Font == //*/
+    @import "paul/core";
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700');
+    $font-website   : 'Open Sans', sans-serif;
+    $fz-title       : 2rem;
+    $fz-subTitle    : 1rem;
+    $fz-website     : 0.9rem;
+    $line-height    : 1.3rem;
+    $color-font     : #6D6D6D;    // font Color General
+    $bg-color       : #f9f9f9;    // Background color body
+
+/*//== Style General == //*/
+    @import "base/base";
+    // @import "layaut/layaut";
+
+    @import "theme/header";
+    // @import "theme/menu";
+    // @import "theme/footer";
+
+    // @import "theme/contact";
+
+/*----------------------------------------*/
+/*//==//==//== Start Proyect ==//==//==//*/
+/*----------------------------------------*/
+    // @import "theme/home/slider";
+    // @import "theme/home/notice";
+    // @import "theme/home/publice";
+    // @import "theme/home/customArticle";
+    
+    

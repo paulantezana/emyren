@@ -1,0 +1,188 @@
+.customAticle{
+    /*
+    / ------------------------------------------------
+    / Layaut
+    / ------------------------------------------------
+    / layaut and general styles
+    /
+    */
+
+    &-header{
+        max-width: $max-width;
+        margin: auto;
+    }
+    &-content{
+        max-width: $max-width;
+        margin: auto;
+        position: relative;
+        @include from(l){
+            padding: 0 1rem;
+        }
+    }
+
+
+    /*
+    / ------------------------------------------------
+    / Styles background: 3D
+    / ------------------------------------------------
+    / estylos con media querys
+    /
+    /
+    */
+    &-container{
+        padding: 2rem 0;
+        background: url('/img/core/grid_darck.png') no-repeat bottom center / 200% 40%,
+                    linear-gradient(darken($white_darck,5),lighten($white_darck,5));
+        @include from(m){
+            background: url('/img/core/grid_darck.png') no-repeat bottom center / 150% 60%,
+                        linear-gradient(darken($white_darck,5),lighten($white_darck,5));
+        }
+        @include from(l){
+            background: url('/img/core/grid_darck.png') no-repeat bottom center / 100% 60%,
+                        linear-gradient(darken($white_darck,5),lighten($white_darck,5));
+            padding: 2rem;
+        }
+    }
+
+
+    /*
+    / ------------------------------------------------
+    / Title section
+    / ------------------------------------------------
+    / Estilos para el titulo de la seccion
+    /
+    /
+    */
+    &-title{
+        color: transparent;
+        text-align: center;
+        text-transform: uppercase;
+        background: linear-gradient(90deg,$color-2,$color-1,$color-3);
+        -webkit-background-clip: text;
+        width: 100%;
+    }
+
+
+    
+    /*
+    / ------------------------------------------------
+    / Styles customArticles
+    / ------------------------------------------------
+    / Estilos para cada articulos
+    /
+    /
+    */
+    background: $white_darck;
+    border: 1px solid $color-1;
+    margin: 2rem;
+    display: flex !important;
+    @include flexCenter;
+    flex-wrap: wrap;
+    text-align: center;
+
+
+    /*
+    / ----------------------------------------------------+
+    / Buttoms custom articles                             +
+    / ----------------------------------------------------+
+    /
+    /
+    */
+    &-content{
+        padding-bottom: 2rem;
+        .slick-arrow{
+            position: absolute;
+            z-index: 10;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border: none;
+            height: 2.2rem;
+            width: 2.2rem;
+            cursor: pointer;
+            background: $white;
+            border: 1px solid lighten($gray_light,25);
+            color: $color-1;
+            border-radius: 2px;
+            &:before{
+                font-size: 1.5rem;
+            }
+            &:hover,
+            &:active{
+                background: $color-1;
+                color: $white;
+            }
+            &:active{
+                transform: translateX(-50%) scale(0.95);
+            }
+            &:focus{
+                outline: none;
+            }
+        }
+        .slick-prev{
+            margin-right: 2.5rem;
+        }
+        .slick-next{
+            margin-left: 2.5rem;
+        }
+
+    }
+
+
+    /*
+    / ------------------------------------------------
+    / Styles Image Circle
+    / ------------------------------------------------
+    / Estilos para la imagen destacada
+    /
+    /
+    */
+    &__img{
+        width: 10rem;
+        flex: 0 0 10rem;
+        height: 10rem;
+        background: linear-gradient(90deg,$color-2,$color-1,$color-3);
+        border-radius: 100%;
+        /* center center */
+        display: flex;
+        @include flexCenter;
+        /* end center center */
+        /* dis linieas */
+        position: relative;
+        &:before,
+        &:after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            background: $white_darck;
+        }
+        &:before{
+            transform: rotate(45deg);
+        }
+        &:after{transform: rotate(-45deg);}
+        img{
+            width: 8.5rem;
+            height: 8.5rem;
+            border-radius: 100%;
+            border: 12px solid $white_darck;
+            position: relative;
+            z-index: 10;
+        }
+    }
+
+    /*
+    / ------------------------------------------------
+    / Styles Cotizar
+    / ------------------------------------------------
+    / Estilos para el boton cotizar
+    / Call To Action
+    /
+    */
+    &__cotizar{
+        background: $color-1;
+        color: $white;
+        padding: 0.3rem 0.7rem;
+        border-radius: 1rem;
+    }
+}

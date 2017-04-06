@@ -1,0 +1,162 @@
+.contact{
+    @include edContainer;
+    padding: 0.4rem 0;
+    &__container{
+        background: $color-2;
+        color: $white_darck;
+    }
+    &__header{
+        width: 100%;
+        &__title,
+        &__subtitle{
+            text-align: center;
+        }
+        @include from(l){
+            margin-bottom: 2rem;
+        }
+        &__subtitle{
+            font-size: 1.3rem;
+            // text-transform: uppercase;
+            line-height: 1.7rem;
+            max-width: 55rem;
+            margin: auto;
+            // margin: -3rem auto 4rem;
+            @include from(l){
+                font-size: 1rem;
+            }
+        }
+    }
+    &__item{
+        @include edItem(100,100,50);
+        align-items: flex-start;
+        margin: 1rem auto;
+
+
+        /*-------------------------------------------+
+            + Styles form
+            +
+            +----------------------------------------*/
+        .input-container{
+            background: $white;
+            border-radius: 2px;
+            &:hover,
+            &:active,
+            &:focus{background: $white;}
+            display: flex;
+            // style icons
+            [class*="icon-"]{
+                flex: 0 0 2rem;
+                background: rgba($gray_light,.5);
+                color: darken($gray_darck,10);
+                display: flex;
+                @include flexCenter;
+                &:before{
+                    top: 0;
+                    margin-right: 0;
+                }
+            }
+            input,
+            textarea{flex: auto;}
+            &:nth-child(5){
+                width: 100%;
+                textarea{margin: 0;}
+            }
+            &:last-child{
+                width: 100%;
+                background: none;
+                display: flex;
+                justify-content: flex-end;
+                input{
+                    flex: 0 0 7rem;
+                    text-transform: uppercase;
+                    font-size: 0.75rem;
+                }
+            }
+        }
+        form{
+            // background: rgba($white_darck,.95);
+            // padding: 1rem;
+            display: flex;
+            @include grid('.input-container',(1,2,2),0.9rem);
+            textarea{
+                width: 100%;
+                margin: 0.5rem;
+            }
+            [type="submit"]{
+                width: auto;
+                margin-left: auto;
+            }
+        }
+        /* -------------------------------------+
+            + end styles form
+            + ----------------------------------+*/
+
+
+
+
+        article{
+            background: $white_darck;
+            color: $color-2;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            h3{
+                background: darken($white_darck,10);
+                color: $gray_darck;
+                text-transform: uppercase;
+                line-height: 2.3rem;
+                text-align: center;
+                font-weight: 300;
+                margin: 0 0 1rem 0;
+            }
+            ul{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                padding-left: 1rem;
+            }
+        }
+        // en general estyles articles
+    }
+}
+
+
+/* Styles social media */
+.contact{
+    .socialMedia{
+        &__list{
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            font-size: 1.7rem;
+            .icon-facebook::before{color: #4E71A8;}
+            .icon-youtube::before{color: #CA3737;}
+        }
+    }
+}
+
+/* Styles Ubiquenos */
+.contact{
+    .location{
+        display: flex;
+        flex-direction: column;
+        [class*="icon-"]::before{margin-right: 0.4rem}
+        .viewMap{
+            display: block;
+            align-self: flex-end;
+        }
+    }
+}
+/* Styles lo estamos escuchando */
+.contact{
+    .escuchar{
+        [class*="icon-"]::before{margin-right: 0.4rem}
+        display: flex;
+        flex-wrap: wrap;
+        &__title{
+            width: 100%;
+        }
+        a{color: $color-2;}
+        .icon-mail{padding-left: 1.5rem;}
+    }
+}

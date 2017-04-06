@@ -1,0 +1,32 @@
+.footer{
+    position: relative;
+    background: $color-5;
+    color: $white_darck;
+    padding: 0.4rem 0;
+    a{color: inherit;}
+    &-container{
+        @include edContainer;
+        justify-content: center;
+    }
+    /* ---------------- styles menu -------------- */
+    &-menu{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-transform: uppercase;
+        &__link{
+            line-height: 2.4rem;
+            display: block;
+            padding: 0 1rem;
+            // font-weight: 100;
+            &:hover,
+            &:active{
+                background: darken($color-5,10);
+                text-decoration: none;
+            }
+        }
+    }
+}

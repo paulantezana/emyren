@@ -1,0 +1,24 @@
+.gigantoGrafias{
+    &__container{
+        background: url('/img/gigantografia.png') no-repeat center center/ 150% 150% ;
+        background-attachment: fixed;
+        position: relative;
+        &:before{
+            position: absolute;
+            content: "";
+            background: lighten(rgba($color-3,.9),12);
+
+            width: 100%;
+            height: 100%;
+        }
+    }
+    position: relative;
+    z-index: 20;
+    &__title{
+        width: 100%;
+        color: $white_darck;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    @include edContainer;
+}
