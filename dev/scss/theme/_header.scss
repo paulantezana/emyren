@@ -1,21 +1,24 @@
 .header{
-	/* ----------------- Layaut ---------------- */
+	background: $color-1;
 	&__item{
-		@include from(l){
-			display: flex;
+		&:nth-child(2){
+			background: $white;
+		}
+	}
+	&__item{
+		&__content{
 			max-width: $max-width;
-			margin: auto;
-			justify-content: space-between;
+			margin: 0 auto;
 			align-items: center;
+			justify-content: space-between;
+			padding: 0 1rem;
+			@include from(l){
+				display: flex;
+			}
 		}
 	}
-	// border-bottom: 1px solid rgba($color-1,.1);
-	/* --------- Estyle zone Contact ----------- */
-	&__item{
-		&:first-child{
-			background: $color-1;
-		}
-	}
+
+	/* ----------------- End  Leyaut Andgeneral styles ---------------- */
 	&__contact{
 		display: flex;
 		width: 100%;
@@ -30,6 +33,7 @@
 			}
 		}
 	}
+
 	/* ----------- Estyles Logo ------------- */
 	object{display: block;}
 	&__logo{
