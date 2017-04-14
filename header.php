@@ -1,23 +1,18 @@
+
 <!DOCTYPE html>
+<?Php remove_filter ( 'the_content', 'wpautop'); ?>
 <html <?php language_attributes(); ?>>
   <head>
     <meta charset="<?php bloginfo( 'charset' )?>"/>
     <title><?php bloginfo( 'name' );?></title>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="<?php bloginfo( 'description' ); ?>">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-    <script src="/js/jquery-1.12.0.min.js"></script>
-    <script src="/js/slick.min.js"></script>
-
-    <link rel="stylesheet" href="/font/styles.css"/>
-    <link rel="stylesheet" href="/css/slick.css"/>
-    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() );?>/assets/css/styles.css"/>
+    <meta name="description" content="<?php bloginfo( 'description' ); ?>"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() );?>/assets/css/styles.css">
     <!--    <link href="https://file.myfontastic.com/jbux6iiLbWoiRtTsucb6KQ/icons.css" rel="stylesheet">-->
     <?php wp_head() ?>
   </head>
-  <body>
+  <body <?php body_class(); ?>>
     <header class="header">
-
       <div class="header__item">
         <div class="header__item__content">
           <div class="header__contact">

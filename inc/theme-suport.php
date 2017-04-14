@@ -4,8 +4,9 @@
         'menu_principal'    => 'Menú Principal',
         'menu_footer'       => 'Menú Inferior'
     ]);
+    add_theme_support( 'title-tag' );
+    add_theme_support( 'automatic-feed-links' );
     add_theme_support( 'post-thumbnails' );
-    
     add_theme_support( 'customize-selective-refresh-widgets' );
 
     function widgets_activation(){
@@ -28,3 +29,8 @@
         $mimes['svg'] = 'image/svg+xml';
         return $mimes;
     }
+
+
+    // ================================ Load jquery =====================================
+    add_action( 'wp_enqueue_scripts', 'emyren_load_jquery' );
+    function emyren_load_jquery() { wp_enqueue_script( 'jquery' ); }
