@@ -7,8 +7,7 @@
     <title><?php bloginfo( 'name' );?></title>
     <meta name="description" content="<?php bloginfo( 'description' ); ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() );?>/assets/css/styles.css">
-    <!--    <link href="https://file.myfontastic.com/jbux6iiLbWoiRtTsucb6KQ/icons.css" rel="stylesheet">-->
+    <link href="https://file.myfontastic.com/jbux6iiLbWoiRtTsucb6KQ/icons.css" rel="stylesheet">
     <?php wp_head() ?>
   </head>
   <body <?php body_class(); ?>>
@@ -18,7 +17,7 @@
           <div class="header__contact">
               <a class="icon-whatsapp emyren_telephone1" href="tel:<?echo get_theme_mod('emyren_telephone1')?>"><?echo get_theme_mod('emyren_telephone1')?> </a>
               <span>|</span><a class="emyren_telephone2" href="tel:<?echo get_theme_mod('emyren_telephone2')?>"><?echo get_theme_mod('emyren_telephone2')?></a>
-              <a class="email icon-email emyren_email1" href="mailto:c<?echo get_theme_mod('emyren_email1')?>"><?echo get_theme_mod('emyren_email1')?></a>
+              <a class="email icon-email emyren_email1" href="mailto:<?echo get_theme_mod('emyren_email1')?>"><?echo get_theme_mod('emyren_email1')?></a>
           </div>
         </div>
       </div>
@@ -29,6 +28,7 @@
               <embed src="<?php echo get_theme_mod('emyren_logo') ?>"/>
             </object>
           </div>
+          <div id="testyoel">Click testing</div>
           <div class="header__menu">
             <div class="menu-nav__container">
               <?php

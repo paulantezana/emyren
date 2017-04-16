@@ -1,9 +1,9 @@
 .notice{
     /* ----------------- Style Layaut -------------------- */
     &__container{
-        @include edContainer;
-        @include grid('.notice',(1, 2, 3),2rem);
-        margin: 0 auto;
+        // @include edContainer;
+        max-width: $max-width;
+        margin: auto;
         &__title{
             width: 100%;
             text-align: center;
@@ -19,6 +19,7 @@
     padding: 1rem;
     border: 1px solid $color-2;
     border-radius: 1rem;
+    margin: 1rem;
     &__title{
         text-align: center;
         color: $color-1;

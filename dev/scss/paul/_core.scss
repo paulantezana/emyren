@@ -39,10 +39,14 @@
     $color-4    : #1ed760;
     $color-5    : #2D2D2D;
 
+    $alert-color: #FFBB00;
+    $error-color: #D73A2D;
+    $ok-color:    #74CC29;
+
 
 /*//== Import ED-Grid == //*/
     @import "ed-grid";
 
 /*//== Import Paul-Ui == //*/
     // @import "ui/exagono";
-    // @import "ui/beforeAfter";
+    @import "ui/beforeAfter";

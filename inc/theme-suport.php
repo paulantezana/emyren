@@ -31,6 +31,3 @@
     }
 
 
-    // ================================ Load jquery =====================================
-    add_action( 'wp_enqueue_scripts', 'emyren_load_jquery' );
-    function emyren_load_jquery() { wp_enqueue_script( 'jquery' ); }

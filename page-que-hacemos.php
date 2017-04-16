@@ -13,7 +13,7 @@
                     <a class="btn" href="">Cotizar Este Producto</a>
                 </div>
                 <div class="product__item">
-                    <img src="/img/recordatorio.png" alt="recordatorio"/>
+                    <img src="%s" alt="recordatorio"/>
                 </div>
                 <div class="product__item">
                     <h2>%s</h2>
@@ -32,12 +32,24 @@
                 // The Loop Header Post
                 printf($articlesHeaderHTML);
                 
+                /*
+                    ===========================================
+                            QUERY AN SHOW PRODUCTS
+                    ===========================================
+                */
+                $products = new WP_Query([
+                    'post_type' => 'producto',  'not_found_rows' => true,
+                    'update_post_term_cache'    => false, 'post_per_post' => 50,
+                ]);
+
+
                 // The Loop Posts
-                if(have_posts()):
-                    while(have_posts()):
-                        the_post();
+                if($products -> have_posts()):
+                    while($products -> have_posts()):
+                        $products -> the_post();
                         printf(
                             $articlesContentHTML,
+                            has_post_thumbnail() ? get_the_post_thumbnail_url() : '',
                             get_the_title(),
                             get_the_excerpt()
                         );

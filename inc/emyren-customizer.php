@@ -46,6 +46,11 @@
             'panel'         => 'emyren'
         ]);
         // ::::::::::::::::::::: Zone Contact :::::::::::::::::::::
+        // @@ Adrees
+        for($i = 1; $i<4; $i++){
+            control_setting($wp_customize,"emyren_adress{$i}");
+            input_control($wp_customize,"emyren_adress{$i}","Direccion {$i}",'emyren_contact','textarea');
+        }
         // @@ Emails
         for ($i = 1; $i<4; $i++){
             control_setting($wp_customize,"emyren_email{$i}");

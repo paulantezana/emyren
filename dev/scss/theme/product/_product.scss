@@ -7,11 +7,11 @@
 .product{
     padding: 2rem 0 ;
     &:nth-child(even){
-        background: url('/img/core/grid_darck.png') no-repeat bottom center / 100% 80%,
+        background: url('/assets/img/grid_darck.png') no-repeat bottom center / 100% 80%,
                     linear-gradient(darken($white_darck,5),lighten($white_darck,5));
     }
     &:nth-child(odd){
-        background: url('/img/core/grid_light.png') no-repeat bottom center / 100% 80%,
+        background: url('/assets/img/grid_light.png') no-repeat bottom center / 100% 80%,
                     linear-gradient($color-2,lighten($color-2,10));
         color: $white_darck;
         .product__content{
