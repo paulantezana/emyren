@@ -10,7 +10,7 @@
         <article class="customArticles__item product">
             <div class="product__content">
                 <div class="product__callToAction">
-                    <a class="btn" href="">Cotizar Este Producto</a>
+                    <a class="btn icon-price" href="%s">Cotizar Este Producto</a>
                 </div>
                 <div class="product__item">
                     <img src="%s" alt="recordatorio"/>
@@ -18,7 +18,7 @@
                 <div class="product__item">
                     <h2>%s</h2>
                     <p>%s</p>
-                    <a class="btn" href="">saber mas</a>
+                    <a class="btn" href="%s">saber mas</a>
                 </div>
             </div>
         </article>
@@ -49,12 +49,14 @@
                         $products -> the_post();
                         printf(
                             $articlesContentHTML,
+                            get_template_directory_uri() . '/contacto',
                             has_post_thumbnail() ? get_the_post_thumbnail_url() : '',
                             get_the_title(),
-                            get_the_excerpt()
+                            get_the_excerpt(),
+                            get_the_permalink()
                         );
                     endwhile;
-                    rewind_posts();
+                     rewind_posts();
                 else:
                     printf('no hay post');
                 endif;
