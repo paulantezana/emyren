@@ -1,0 +1,24 @@
+.post{
+  &__edit{
+    a{
+      padding: 1rem;
+      display: block;
+    }
+  }
+  &__navigation{
+    padding: 1rem;
+    margin: 1rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.main__item{
+  .error404{
+      @include edContainer();
+
+      padding: 1rem;
+      background: $white;
+      border-left: 3px solid $error-color;
+  }
+}

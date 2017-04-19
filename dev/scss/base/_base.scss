@@ -36,11 +36,9 @@ a{
     + General style Title in website
     +
     +---------------------------------------------+*/
-h2{
-    font-size: 2rem;
-    // margin: 4rem 0;
-    // line-height: 4rem;
-}
+    h1,h2,h3{
+        color: $color-1;
+    }
 
 
 
@@ -54,14 +52,14 @@ textarea{
     line-height: 2.4rem;
     padding: 0 1rem;
     border-radius: 2px;
-    border: 1px solid none;
+    border: 1px solid $white_darck;
     color: darken($color-2,10);
     font-family: $font-website;
     background: $white;
     &:focus,
     &:hover,
     &:active{
-        outline: none;
+        outline: $white_darck;
         background: $white;
     }
 }

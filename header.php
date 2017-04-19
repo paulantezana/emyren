@@ -28,7 +28,6 @@
               <embed src="<?php echo get_theme_mod('emyren_logo') ?>"/>
             </object>
           </div>
-          <div id="testyoel">Click testing</div>
           <div class="header__menu">
             <div class="menu-nav__container">
               <?php

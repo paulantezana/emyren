@@ -11,15 +11,24 @@
 
     function widgets_activation(){
         register_sidebar([
-            'name'          => __( 'avisos', 'lafonera' ),
-            'id'            => 'avisos',
-            'description'   => __( 'agrege las categorias de los avisos', 'lafonera' ),
+            'name'          => __( 'productos', 'emyren' ),
+            'id'            => 'product__widget',
+            'description'   => __( 'Categorias de los productos', 'emyren' ),
             'before_widget' => '<section id="%1$s" class="sidebar %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h2 class="sidebar__title">',
             'after_title'   => '</h2>',
             ]
         );
+        register_sidebar( [
+            'name'          => __( 'sidebar', 'emyren' ),
+            'id'            => 'sidebar__widget',
+            'description'   => __( 'Categorias de los productos', 'emyren' ),
+            'before_widget' => '<section id="%1$s" class="sidebar %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="sidebar__title">',
+            'after_title'   => '</h2>',
+        ] );
     }
     add_action('widgets_init','widgets_activation');
 

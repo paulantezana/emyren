@@ -19,9 +19,9 @@ function add_action_producto(){
         'thumbnail',
         'author',
         'editor',
-        // 'excerpt',
-//            'custom-fields',
-        //'page-attributes',
+        'excerpt',
+        'custom-fields',
+        'page-attributes',
         'comments'
     ];
     $args = [
@@ -34,9 +34,10 @@ function add_action_producto(){
         'show_in_nav_menus'     => true,
         'show_in_menu'          => true,
         'show_in_admin_bar'     => true,
+        'show_in_rest'          => true,
         'menu_position'         => 8,
         'menu_icon'             => 'dashicons-products',
-        'capability_type'       => 'post',
+        'capability_type'       => 'productos',
         'map_meta_cap'          => true,
         'hierarchical'          => false,
         'has_archive'           => true,
@@ -95,36 +96,3 @@ function add_register_producto(){
     register_taxonomy('producto_category', 'producto',$args);
 }
 add_action('init','add_register_producto');
-
-/*
-    ==================================
-            ADD SUPORT TEMPLATE
-    ==================================
-*/
-// function emyren_load_template($original){
-//     if(get_query_var( 'post_type' ) !== 'producto'){
-//         return $original;
-//     }
-//     return get_stylesheet_directory() . '/producto.php';
-//     // return 'single-producto.php';
-// }
-// add_action('template_include','emyren_load_template');
-
-
-// add_action( 'pre_get_posts', 'add_my_post_types_to_query' );
-
-// function add_my_post_types_to_query( $query ) {
-// 	if ( is_home() && $query->is_main_query() )
-// 		$query->set( 'post_type', array( 'post', 'producto' ) );
-// 	return $query;
-// }
-
-// add_filter('single_template', function($original){
-//   global $post;
-//   $post_name = $post->post_name;
-//   $post_type = $post->post_type;
-//   $base_name = 'single-' . $post_type . '-' . $post_name . '.php';
-//   $template = locate_template($base_name);
-//   if ($template && ! empty($template)) return $template;
-//   return $original;
-// });

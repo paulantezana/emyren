@@ -10,6 +10,8 @@
     $bg-color       : #f9f9f9;    // Background color body
 /*//== Style General == //*/
     @import "base/base";
+    @import "theme/general";
+    @import "theme/site";
     @import "layaut/layaut";
 
     @import "theme/header";
@@ -17,6 +19,8 @@
     @import "theme/footer";
 
     @import "theme/contact";
+
+    @import "theme/sidebar";
 
 /*----------------------------------------*/
 /*//==//==//== Start Proyect ==//==//==//*/
@@ -26,3 +30,5 @@
     // @import "theme/home/publice";
     // @import "theme/home/customArticle";
     @import "theme/product/product";
+    @import "theme/product/sidebar";
+    @import "theme/product/single";

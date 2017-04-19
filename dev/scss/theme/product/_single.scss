@@ -1,0 +1,9 @@
+.producto-container{
+  @include edContainer();
+}
+.producto__main{
+  @include edItem(100,100,70);
+}
+.producto__sidebar{
+  @include edItem(100,100,30);
+}
