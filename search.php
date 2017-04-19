@@ -1,41 +1,26 @@
-<?php
-    $siteHTML = '
-                <h1 class="site__title">%s</h1>
-                <div class="site__content">%s</div>';
-    get_header();
-    printf('<div class="main">');
-        printf('<div class="main__item">');
-            // SITES
-            printf('<div class="site">');
+<?php get_header(); ?>
+    <div class="main">
+        <div class="main__item">
+            <div class="site">
+            
+                <div class="site__item">
+                    <?php 
+                        if(have_posts()): while(have_posts()): the_post(); 
+                        edit_post_link( __( 'Edit', 'emyren' ), '<div class="post__edit">', '</div>' ); ?>
 
+                        <h1 class="site__title"><?php the_title()?></h1>
+                        <div class="site__content"><?php the_content()?></div>
 
+                    <?php 
+                    printf('<div class="post__navigation"> <div class="post__navigation__prev">'); previous_post_link();
+                    printf('</div><div class="post__navigation__next">'); next_post_link(); printf('</div></div>');
+                    endwhile;  rewind_posts(); endif; ?>
+                </div>
+                <div class="site__item">
+                    <?php dynamic_sidebar( 'sidebar' ); ?>
+                </div>
 
-                // SITE ITEM
-                printf('<div class="site__item">');
-                    if(have_posts()):
-                        while(have_posts()): the_post();
-                            printf(
-                                $siteHTML,
-                                get_the_title(),
-                                get_the_content()
-                            );
-                        endwhile;
-                        rewind_posts();
-                    endif;
-                printf('</div>');
-
-
-
-                // SITE ITEM
-                printf('<div class="site__item">');
-                    dynamic_sidebar( 'sidebar' );
-                printf('</div>');
-                // END SITE ITEM
-
-
-
-            printf('</div>');
-            // END SITE
-        printf('</div>');
-    printf('</div>');
-    get_footer();
+            </div>
+        </div>
+    </div>
+<?php get_footer(); ?>

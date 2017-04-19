@@ -11,7 +11,7 @@
           wp_nav_menu($args);
         ?>
         <div class="developer-autor">
-          <p>Desarrollado por: <a class="icon-paulantezana" href="http://paulantezana.com">paul antezana</a></p>
+          <p>Desarrollado por: <a class="icon-paulantezana" href="http://paulantezana.com" target="_blank">paul antezana</a></p>
         </div>
       </div>
     </footer>

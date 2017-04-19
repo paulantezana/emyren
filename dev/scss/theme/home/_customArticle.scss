@@ -31,14 +31,14 @@
     */
     &-container{
         padding: 2rem 0;
-        background: url('/img/core/grid_darck.png') no-repeat bottom center / 200% 40%,
+        background: url('./../img/grid_darck.png') no-repeat bottom center / 200% 40%,
                     linear-gradient(darken($white_darck,5),lighten($white_darck,5));
         @include from(m){
-            background: url('/img/core/grid_darck.png') no-repeat bottom center / 150% 60%,
+            background: url('./../img/grid_darck.png') no-repeat bottom center / 150% 60%,
                         linear-gradient(darken($white_darck,5),lighten($white_darck,5));
         }
         @include from(l){
-            background: url('/img/core/grid_darck.png') no-repeat bottom center / 100% 60%,
+            background: url('./../img/grid_darck.png') no-repeat bottom center / 100% 60%,
                         linear-gradient(darken($white_darck,5),lighten($white_darck,5));
             padding: 2rem;
         }

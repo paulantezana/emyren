@@ -17,9 +17,12 @@
 .contact{
     display: flex;
     justify-content: space-around;
-    // &__form{
-    //     margin: 0 auto;
-    // }
+    @include to(l){
+        flex-wrap: wrap;
+        &__item{
+            width: 100%;
+        }
+    }
 }
 /*
     ===============================
@@ -28,9 +31,23 @@
 */
 .contact-container{
     color: $white_darck;
-    background: linear-gradient(45deg, $color-2 50%, darken($color-2,2) 50%);
+    // background: linear-gradient(45deg, $color-2 50%, darken($color-2,2) 50%);
+    background: url('./../img/grid_darck.png') no-repeat bottom center / 200% 40%,
+                    linear-gradient(45deg, $color-2 50%, darken($color-2,2) 50%);
+        @include from(m){
+            background: url('./../img/grid_darck.png') no-repeat bottom center / 150% 60%,
+                        linear-gradient(45deg, $color-2 50%, darken($color-2,2) 50%);
+        }
+        @include from(l){
+            background: url('./../img/grid_darck.png') no-repeat bottom center / 100% 60%,
+                        linear-gradient(45deg, $color-2 50%, darken($color-2,2) 50%);
+            padding: 2rem;
+        }
     a{
         color: inherit;
+    }
+    h1,h2,h3,h4{
+        color: $white_darck;
     }
 }
 
@@ -88,6 +105,11 @@
                 display: block;
             }
         }
+        .input-send{
+            input{
+                border: none;
+            }
+        }
     }
 }
 
@@ -119,12 +141,13 @@
     article{
         h3{
             text-transform: uppercase;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
         }
         ul{
             list-style: none;
-            padding: 0;
+            padding: 0 0 0 0.5rem;
             margin: 0;
+            font-size: 1rem;
         }
     }
 }
@@ -137,8 +160,8 @@
         a{
             position: relative;
             display: block;
-            width: 2rem;
-            height: 2rem;
+            width: 2.7rem;
+            height: 2.7rem;
             margin: 0.5rem;
             &::after{
                 @include beforeAfter();
@@ -150,7 +173,7 @@
                 z-index: 1;
                 top: 50%;
                 left: 50%;
-                transform: translate(-12%,-50%);
+                transform: translate(-10%,-50%);
                 transition: .4s all;
             }
             &:hover{
@@ -171,28 +194,3 @@
         .icon-twitter:hover::after{background: #40CBF9;}
     }
 }
-/* Styles Ubiquenos */
-// .contact{
-//     .location{
-//         display: flex;
-//         flex-direction: column;
-//         [class*="icon-"]::before{margin-right: 0.4rem}
-//         .viewMap{
-//             display: block;
-//             align-self: flex-end;
-//         }
-//     }
-// }
-/* Styles lo estamos escuchando */
-// .contact{
-//     .escuchar{
-//         [class*="icon-"]::before{margin-right: 0.4rem}
-//         display: flex;
-//         flex-wrap: wrap;
-//         &__title{
-//             width: 100%;
-//         }
-//         a{color: $color-2;}
-//         .icon-mail{padding-left: 1.5rem;}
-//     }
-// }

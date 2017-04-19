@@ -37,7 +37,7 @@ function add_action_producto(){
         'show_in_rest'          => true,
         'menu_position'         => 8,
         'menu_icon'             => 'dashicons-products',
-        'capability_type'       => 'productos',
+        'capability_type'       => 'post',
         'map_meta_cap'          => true,
         'hierarchical'          => false,
         'has_archive'           => true,
@@ -56,13 +56,6 @@ function add_action_producto(){
     register_post_type('producto',$args);
 }
 add_action('init','add_action_producto');
-
-/**
- *
- *
- *
- *
- */
 function add_register_producto(){
     $singular   = 'Categoria';
     $plural     = 'Categorias';

@@ -1,23 +1,16 @@
-<?php
-    $siteHTML = '
-        <div class="site">
-            <h1 class="site__title">%s</h1>
-            <div class="site__content">%s</div>
+<?php get_header(); ?>
+    <div class="main">
+        <div class="main__item">
+            <div class="site">
+
+                <?php  if(have_posts()): while(have_posts()): the_post(); ?>
+
+                    <h1 class="site__title">        <?php the_title();?>    </h1>
+                    <div class="site__content">     <?the_content();?>      </div>
+
+                <?php endwhile; rewind_posts(); endif; ?>
+
+            </div>
         </div>
-    ';
-    get_header();
-    printf('<div class="main">');
-        printf('<div class="main__item">');
-            if(have_posts()):
-                while(have_posts()): the_post();
-                    printf(
-                        $siteHTML,
-                        get_the_title(),
-                        get_the_content()
-                    );
-                endwhile;
-                rewind_posts();
-            endif;
-        printf('</div>');
-    printf('</div>');
-    get_footer();
+    </div>
+<?php get_footer();

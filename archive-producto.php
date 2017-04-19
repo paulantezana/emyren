@@ -52,7 +52,7 @@
                     endwhile;
                      rewind_posts();
                 else:
-                    printf('no hay post');
+                    printf('no hay productos');
                 endif;
                 // End The Loop Posts
 

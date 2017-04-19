@@ -1,41 +1,39 @@
-<?php
-    $singleProductHTML = '
-        <div class="singleProduct">
-            <div class="singleProduct__thumbnails"> <img src="%s" alt="%s"> </div>
-            <div class="singleProduct__content">%s</div>
+<?php get_header(); ?>
+    <div class="main">
+        <div class="main__item">
+            <div class="site">
+            
+                <div class="site__item">
+                    <?php 
+                    if(have_posts()): while(have_posts()): the_post(); 
+                    edit_post_link( __( 'Edit', 'emyren' ), '<div class="post__edit">', '</div>' ); ?>
+
+                        <div class="singleProduct">
+                            <div class="singleProduct__thumbnails">
+                                <img src="<?php has_post_thumbnail() ? the_post_thumbnail_url() : ''?>" alt="<?php the_title()?>"/>
+                            </div>
+                            <div class="singleProduct__content"><?php the_content()?></div>
+                        </div>
+
+                    <?php 
+                    printf('<div class="post__navigation"> <div class="post__navigation__prev">'); previous_post_link();
+                    printf('</div><div class="post__navigation__next">'); next_post_link(); printf('</div></div>');
+                    endwhile;  rewind_posts(); endif; ?>
+                </div>
+                <div class="site__item">
+                    <?php dynamic_sidebar( 'productos' );?>
+                </div>
+
+            </div>
         </div>
-     ';
-    get_header();
-    printf('<div class="main">');
-        printf('<div class="main__item">');
-
-            printf('<div class="producto-container">');
-
-                // SHOW POST
-                printf('<div class="producto__main">');
-                    if(have_posts()):
-                        while(have_posts()): the_post();
-                            edit_post_link( __( 'Edit', 'fonera' ), '<div class="post__edit">', '</div>' );
-                            printf(
-                                $singleProductHTML,
-                                has_post_thumbnail() ? get_the_post_thumbnail_url() : '',
-                                get_the_title(),
-                                get_the_content(null, false)
-                            );
-                            printf('<div class="post__navigation"> <div class="post__navigation__prev">'); previous_post_link();
-                            printf('</div><div class="post__navigation__next">'); next_post_link(); printf('</div></div>');
-                        endwhile;
-                        rewind_posts();
-                    endif;
-                printf('</div>');
-                
-                // SIDEBAR POST
-                printf('<div class="producto__sidebar">');
-                    require_once get_template_directory() . '/template/productos-category.php';
-                printf('</div>');
-                // 
-            printf('</div>');
-
-        printf('</div>');
-    printf('</div>');
-    get_footer();
+        <div class="main__item">
+            <section class="contact-container">
+                <header class="contact__header">
+                    <h1 class="contact__header__title"></h1>
+                    <div class="contact__header__subtitle"></div>
+                </header>
+                <?php require_once get_template_directory() . '/template/contact.php'; ?>
+            </section>
+        </div>
+    </div>
+<?php get_footer(); ?>
