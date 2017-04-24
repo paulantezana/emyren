@@ -1,0 +1,46 @@
+.preloading{
+    &-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transition: 1s all;
+        z-index: 880;
+        &:before,
+        &:after{
+            position: absolute;
+            z-index: 888;
+            content: '';
+            background: #FE599B;
+            width: 50%;
+            height: 100vh;
+            top: 0;
+            transition: 1s all;
+        }
+        &:before{
+            left: 0;
+        }
+        &:after{
+            right: 0;
+        }
+    }
+    p{
+        font-size:  3rem;
+        color: white;
+        position: relative;
+        z-index: 890;
+    }
+}
+.removePreloading{
+    &:before{
+        left: -100%;
+    }
+    &:after{
+        right: -100%;
+    }
+}

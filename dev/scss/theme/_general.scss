@@ -22,3 +22,34 @@
       border-left: 3px solid $error-color;
   }
 }
+
+.slick-arrow{
+    position: absolute;
+    z-index: 10;
+    border: none;
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+    background: rgba($gray_darck,0.1);
+    border: none;
+    color: $color-1;
+    border-radius: 100%;
+    &:before{
+        font-size: 1.8rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    &:hover,
+    &:active{
+        background: $color-1;
+        color: $white;
+    }
+    &:active{
+        transform: translateX(-50%) scale(0.95);
+    }
+    &:focus{
+        outline: none;
+    }
+}

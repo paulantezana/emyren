@@ -1,0 +1,39 @@
+/*
+    =====================================
+                LAYAUT
+    =====================================
+*/
+.services{
+    padding: 3rem 0;
+    @include edContainer();
+    &-header{
+        @include edContainer();
+    }
+    &-container{
+        background: $color-1;
+    }
+}
+/*
+    =====================================
+                STYLES DECORATION
+    =====================================
+*/
+.services{
+    &-title{
+        text-align: center;
+        color: $white;
+        font-size: 2.5rem;
+        width: 100%;
+    }
+    &__link{
+        background: $white;
+        color: $color-1;
+        display: inline-block;
+        line-height: 2.5rem;
+        padding: 0 1.2rem;
+        border-radius: 2.5rem;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+}

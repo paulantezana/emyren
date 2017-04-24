@@ -15,17 +15,28 @@
             // ========================================================
         printf('</div>');
 
+        /* ==================================
+               SERVICES
+            ==================================
+        */
+        printf('<div class="main__item">');
+            require_once get_template_directory() . '/template/services.php';
+        printf('</div>');
+
+
+
+       /* ==================================
+               ARTICLES
+            ==================================
+        */ 
         printf('<div class="main__item">');
             require_once get_template_directory() . '/template/aticles.php';
         printf('</div>');
 
-        printf('<div class="main__item">');
-            // require_once get_template_directory() . '/template/contact.php';
-        printf('</div>');
 
-        printf('<div class="main__item">');
-            // require_once get_template_directory() . '/template/contact.php';
-        printf('</div>');
+
+
+
 
         /* ==================================
                CONTACT

@@ -1,8 +1,8 @@
 <?php
     $articlesHeaderHTML = '
         <div class="customArticles__header">
-            <h2>ARTÍCULOS PERSONALIZADOS</h2>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem atque fuga, temporibus laudantium, corrupti vero repudiandae accusantium explicabo ab accusamus quos, aperiam totam illum fugiat facere officia sapiente quae odio!</p>
+            <h2 class="%s">%s</h2>
+            <p class="%s">%s</p>
         </div>
     ';
 
@@ -26,11 +26,26 @@
 
     get_header();
     printf('<div class="main">');
+
+        printf('<div class="main__item">');
+            require_once get_template_directory() . '/template/led.php';
+        printf('</div>');
+
+        printf('<div class="main__item">');
+            require_once get_template_directory() . '/template/giganto.php';
+        printf('</div>');
+
         printf('<div class="main__item">');
             printf('<div class="section customArticles">');
 
                 // The Loop Header Post
-                // printf($articlesHeaderHTML);
+                printf(
+                    $articlesHeaderHTML,
+                    'emyren_article_title',
+                    get_theme_mod( 'emyren_article_title' ),
+                    'emyren_article_description',
+                    get_theme_mod( 'emyren_article_description' )
+                );
                 
                 /*
                     ===========================================

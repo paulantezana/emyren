@@ -1,0 +1,119 @@
+/*
+    ==============================================
+            GENERAL STYLES AND LEYAUT
+    ==============================================
+*/
+.giganto{
+    @include edContainer;
+    // padding: 2.5rem 0;
+    &-container{
+        background: url('./../img/giantografias_emyren.jpg') no-repeat center center / cover;
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: lighten($color-3,15);
+            opacity: 0.9;
+        }
+    }
+    &__header,
+    &__main{
+        width: 100%;
+        z-index: 10;
+        padding: 0 1rem;
+    }
+    &__footer{
+        @include from(l){
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+        &__item{
+            margin: 2rem 0;
+            @include from(l){
+                &:nth-child(1){
+                    max-width: 400px;
+                }
+                &:nth-child(2){
+                    max-width: 650px;
+                }
+            }
+        }
+    }
+}
+
+/*
+    ==============================================
+            DECORATION STYLE
+    ==============================================
+*/
+.giganto{
+    &__title{
+        text-align: center;
+        color: $color-5;
+        font-size: 2rem;
+    }
+    &__footer{
+        &__item{
+            &:nth-child(1){
+                background: $color-2;
+                padding: 1rem;
+                h3,p{
+                    margin: 0;
+                }
+                h3{
+                    color: lighten($color-3,10);
+                }
+                p{
+                    color: $white;
+                }
+            }
+            &:nth-child(2){
+                p{
+                   color: $color-5; 
+                   margin-top: 0;
+                }
+            }
+        }
+    }
+    &__readMore{
+        background: $white_darck;
+        line-height: 2.5rem;
+        padding: 0 1rem;
+        display: inline-block;
+        color: $color-2;
+        border-radius: 5px;
+        text-decoration: none;
+        &:hover,
+        &:active{
+            background: $white;
+            text-decoration: none;
+        }
+        &:active{
+           transform: scale(0.98);
+        }
+    }
+    &__slider{
+        position: relative;
+        img{
+            @include from(m){
+                margin: 1rem;
+            }
+        }
+        .slick-next,
+        .slick-prev{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+        .slick-next{
+            right: 1rem;
+        }
+        .slick-prev{
+            left: 1rem;
+        }
+    }
+}

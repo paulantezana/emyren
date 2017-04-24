@@ -4,7 +4,7 @@
                 CUSTOM POST TYPES
         ==================================
     */
-    require_once get_template_directory() . '/inc/customPostTypes/emyren-productos.php';
+    require_once get_template_directory() . '/inc/customPostTypes/emyren-productos.php'; 
     /*
         ==================================
                 THEME SUPORT

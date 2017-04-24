@@ -6,7 +6,7 @@
         <?php
             $articles = new WP_Query([
                 'post_type' => 'producto',  'not_found_rows' => true,
-                'update_post_term_cache'    => false, 'post_per_post' => 50,
+                'update_post_term_cache'    => false, 'post_per_post' => 10,
             ]);
             if($articles->have_posts()):
                 while($articles -> have_posts()): $articles -> the_post();?>
