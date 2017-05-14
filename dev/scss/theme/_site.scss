@@ -8,6 +8,11 @@
         margin-top: 0;
         width: 100%;
     }
+    &__content{
+        &--full{
+            width: 100%;
+        }
+    }
     &__item{
         &:nth-child(1){
             @include edItem(100,100,70);
